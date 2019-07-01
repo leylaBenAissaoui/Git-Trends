@@ -19,17 +19,21 @@ import com.example.trendingrepos.Pojo.Repo;
 import com.example.trendingrepos.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MAdapter extends RecyclerView.Adapter<MAdapter.ViewHolder>  {
+
     private static final String TAG = "MyAdapter";
     private Context mcontext ;
-    private ArrayList<Repo> Repos;
+    private List<Repo> Repos;
 
 
-    public MAdapter(Context mcontext, ArrayList<Repo> repos) {
+    public MAdapter(Context mcontext ) {
         this.mcontext = mcontext;
-        Repos = repos;
+
     }
+
+
 
     @NonNull
     @Override
@@ -68,6 +72,11 @@ public class MAdapter extends RecyclerView.Adapter<MAdapter.ViewHolder>  {
     }
 
 
+    public void SetRepos(List<Repo> repos){this.Repos =repos ;NotifyDataSetChanged();}
+
+    private void NotifyDataSetChanged() {
+        //Updating the Adapter
+    }
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
