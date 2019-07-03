@@ -12,5 +12,5 @@ public interface GitHubAPI {
     Call<Reponse> getResponse(@Query("q") String created ,@Query("sort") String stars ,@Query("order") String desc ,@Query("page") Integer page) ;
 
     @GET("search/repositories?q=created:>2019-06-22&sort=stars&order=desc")
-    Call<Reponse> getResponse();
+    Call<Reponse> getResponse(@Query("page") Integer page);
 }

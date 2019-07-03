@@ -72,11 +72,11 @@ public class MAdapter extends RecyclerView.Adapter<MAdapter.ViewHolder>  {
     }
 
 
-    public void SetRepos(List<Repo> repos){this.Repos =repos ;NotifyDataSetChanged();}
+    public void SetRepos(List<Repo> repos){this.Repos =repos ;}
 
-    private void NotifyDataSetChanged() {
+    //private void NotifyDataSetChanged() {
         //Updating the Adapter
-    }
+    //}
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {

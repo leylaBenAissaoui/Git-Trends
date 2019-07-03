@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TrendingRepos</string>
+    <string name="app_name">Git Trends</string>
     <string name="owner_name">owner_name</string>
     <string name="repo_name">repo_name</string>
     <string name="repo_desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</string>

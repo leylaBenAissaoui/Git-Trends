@@ -32,22 +32,22 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity  {
+
 //implements SwipeRefreshLayout.OnRefreshListener
     private static final String TAG = "MainActivity";
     // RecyclerView
     private RecyclerView mRecyclerView;
     private MAdapter adapter ;
-     private LinearLayoutManager mLayoutManager ;
+    private LinearLayoutManager mLayoutManager ;
 
     //UI Event
     public static boolean isLoading= true ;
     public static boolean  isLastPage =false;
     //paging
-    public static int page ;
+    public static Integer page =1;
     private RepoViewModel mViewModel ;
 
-    private ArrayList<Reponse> listReponses;
-    private ArrayList<Repo> listRepos;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,35 +56,46 @@ public class MainActivity extends AppCompatActivity  {
         InitRecyclerView() ;
         //ViewModel
         mViewModel= ViewModelProviders.of(this).get(RepoViewModel.class) ;
+
         mViewModel.init() ;
         mViewModel.getmLiveRepos().observe(this, new Observer<List<Repo>>() {
             @Override
             public void onChanged(List<Repo> repos) {
-                adapter.SetRepos(repos);
+                    adapter.SetRepos(repos);
+                    adapter.notifyDataSetChanged();
+                    Toast toast = Toast.makeText(MainActivity.this, "page "+page.toString(), Toast.LENGTH_LONG);
+                    toast.show(); }
 
-            }
         });
-
+       // mViewModel.FetchMoreData(page++) ;
+        //ajouter Un Listner pour le Scroll
         mRecyclerView.addOnScrollListener(new MyOnScrollListener(mLayoutManager) {
             @Override
-            public void onLoadMore(int current_page) {
-                mViewModel.FetchMoreData( current_page) ;
+            public boolean isLastPage() {
+                return false;
+            }
+
+            @Override
+            public boolean isLoading() {
+                return false;
+            }
+
+            @Override
+            public void LoadMore() {
+                Toast toast = Toast.makeText(MainActivity.this, "Scrolling ", Toast.LENGTH_LONG);
+                toast.show();
+                mViewModel.FetchMoreData(page++) ;
+
             }
 
 
 
         });
-
-
-
-
 
     }
 
     private void InitRecyclerView(){
 
-
-      //  recyclerView.addOnScrollListener(recyclerViewOnScrollListener);
         DividerItemDecoration itemDecor = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL );
         // SwipeRefreshLayout swipeRefresh= ;
         mRecyclerView =findViewById(R.id.Recycler_view);
