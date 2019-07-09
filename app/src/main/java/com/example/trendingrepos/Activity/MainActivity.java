@@ -41,15 +41,15 @@ public class MainActivity extends AppCompatActivity  {
     private LinearLayoutManager mLayoutManager ;
 
     //UI Event
-    public static boolean isLoading= true ;
-    public static boolean  isLastPage =false;
+   // public static boolean isLoading= true ;
+   // public static boolean  isLastPage =false;
     //paging
-    public static Integer page =1;
+    public  static Integer page =0;
     private RepoViewModel mViewModel ;
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         // Recycler View
@@ -61,14 +61,17 @@ public class MainActivity extends AppCompatActivity  {
         mViewModel.getmLiveRepos().observe(this, new Observer<List<Repo>>() {
             @Override
             public void onChanged(List<Repo> repos) {
+
                     adapter.SetRepos(repos);
                     adapter.notifyDataSetChanged();
+                    //isLoading=false ;
                     Toast toast = Toast.makeText(MainActivity.this, "page "+page.toString(), Toast.LENGTH_LONG);
-                    toast.show(); }
+                    toast.show();
+                }
 
         });
-       // mViewModel.FetchMoreData(page++) ;
-        //ajouter Un Listner pour le Scroll
+
+
         mRecyclerView.addOnScrollListener(new MyOnScrollListener(mLayoutManager) {
             @Override
             public boolean isLastPage() {
@@ -84,21 +87,16 @@ public class MainActivity extends AppCompatActivity  {
             public void LoadMore() {
                 Toast toast = Toast.makeText(MainActivity.this, "Scrolling ", Toast.LENGTH_LONG);
                 toast.show();
-                mViewModel.FetchMoreData(page++) ;
-
-            }
-
-
+                mViewModel.FetchMoreData() ;  }
 
         });
-
     }
 
     private void InitRecyclerView(){
 
         DividerItemDecoration itemDecor = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL );
         // SwipeRefreshLayout swipeRefresh= ;
-        mRecyclerView =findViewById(R.id.Recycler_view);
+            mRecyclerView =findViewById(R.id.Recycler_view);
         mRecyclerView.addItemDecoration(itemDecor);
         adapter = new MAdapter(this );
         mRecyclerView.setAdapter(adapter);

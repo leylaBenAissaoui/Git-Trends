@@ -25,7 +25,7 @@ public class MAdapter extends RecyclerView.Adapter<MAdapter.ViewHolder>  {
 
     private static final String TAG = "MyAdapter";
     private Context mcontext ;
-    private List<Repo> Repos;
+    private List<Repo> Repos = new ArrayList<>();
 
 
     public MAdapter(Context mcontext ) {
@@ -68,7 +68,8 @@ public class MAdapter extends RecyclerView.Adapter<MAdapter.ViewHolder>  {
 
     @Override
     public int getItemCount() {
-        return Repos.size();
+
+        return Repos.size() ;
     }
 
 

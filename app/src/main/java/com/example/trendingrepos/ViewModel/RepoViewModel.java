@@ -17,6 +17,7 @@ import java.util.List;
 
 public class RepoViewModel  extends AndroidViewModel {
 
+
  private RepoRepository mRepoRepository;
 
  private MediatorLiveData<List<Repo>> mLiveRepos = new MediatorLiveData<>();
@@ -27,23 +28,35 @@ public class RepoViewModel  extends AndroidViewModel {
 
 
  public void init() {
-    mRepoRepository = RepoRepository.getInstance();
-
-     mRepoRepository.FetchInitData();
+     mRepoRepository = RepoRepository.getInstance();
+     mRepoRepository.init();
      mLiveRepos.addSource(mRepoRepository.getRepos() ,new Observer<List<Repo>>() {
          @Override
          public void onChanged( List<Repo> repos) {
-
              mLiveRepos.setValue(repos);
-
          }
      });
  }
 
- public MutableLiveData<List<Repo>> getmLiveRepos() { return mLiveRepos; }
+    public MutableLiveData<List<Repo>> getmLiveRepos() { return mLiveRepos; }
+
+    public void  FetchMoreData(){  mRepoRepository.FetchMoreData();}
 
 
-    public void  FetchMoreData( int page){
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public void  FetchMockData( int page){
          switch (page%4){
             case  0 :  mRepoRepository.ProvideMockdata0() ; break ;
             case  1 :  mRepoRepository.ProvideMockdata1() ; break ;

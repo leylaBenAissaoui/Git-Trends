@@ -1,7 +1,11 @@
 package com.example.trendingrepos.RestService;
 
 import android.util.Log;
+import android.widget.Toast;
 
+import androidx.lifecycle.MutableLiveData;
+
+import com.example.trendingrepos.Activity.MainActivity;
 import com.example.trendingrepos.Pojo.Item;
 import com.example.trendingrepos.Pojo.Repo;
 import com.example.trendingrepos.Pojo.Reponse;
@@ -21,8 +25,15 @@ public class GitService {
 
     private GitHubAPI  service;
     private List<Repo> listRepos = new ArrayList<>();
+    private MutableLiveData<List<Repo>> mRepos = new MutableLiveData<>();
+    private MutableLiveData<Integer> responseCode = new MutableLiveData<>();
 
-   //Constructeur
+
+
+    public List<Repo> getListRepos() {  return listRepos; }
+
+
+    //Constructeur
     private GitService(){
         this.service =  RetrofitClient.getRetrofitInstance().create(GitHubAPI.class) ;
 
@@ -34,34 +45,38 @@ public class GitService {
             return instance;
     }
 
+    public MutableLiveData<List<Repo>> getRepos(){ return mRepos; }
 
-    public List<Repo> FetchData(int page) {
+    public void Init() {
         service = RetrofitClient.getRetrofitInstance().create(GitHubAPI.class) ;
         GitHubAPI service = RetrofitClient.getRetrofitInstance().create(GitHubAPI.class);
-
-        //asynchrone
-        Call<Reponse> call = service.getResponse(page);
-
-       call.enqueue(new Callback<Reponse>() {
-
-
-            @Override
-            public void onResponse(Call<Reponse> call, Response<Reponse> response) {
-                if (response.isSuccessful()) {
-                    //Reponse rep = response.body();
-                    List<Item> list = response.body().getItems();
-                        for (Item i : list) {
-                            listRepos.add(new Repo(i.getName(), i.getDescription(), i.getOwner().getLogin(), i.getOwner().getAvatarUrl(), i.getStargazersCount().toString(), i.getHtmlUrl()));
-                        }
-
-                   }
-                }
-            @Override
-            public void onFailure(Call<Reponse> call, Throwable t) { Log.e(TAG, "ereeeeeeur"+t.toString()); }
-        });
-        return null; //pour tester avec les mocks
-        //return listRepos;//pour tester les donnéess reçues Via l'API
+        FetchMoreData() ;
     }
+
+
+  public void FetchMoreData( ){
+      Call<Reponse> call = service.getResponse(++MainActivity.page);
+      // Call<Reponse> call = service.getResponse(34);//page 35 ==>code 422
+      //MainActivity.isLoading=true ;
+      call.enqueue(new Callback<Reponse>() {
+          @Override
+          public void onResponse(Call<Reponse> call, Response<Reponse> response) {
+             // if (response.isSuccessful()) {
+
+                  List<Item> list = response.body().getItems();
+                  for (Item i : list) {
+                      listRepos.add(new Repo(i.getName(), i.getDescription(), i.getOwner().getLogin(), i.getOwner().getAvatarUrl(), i.getStargazersCount().toString(), i.getHtmlUrl()));
+                  }
+                      mRepos.setValue(listRepos);
+                      responseCode.setValue(response.code());//}
+
+          }
+          @Override
+          public void onFailure(Call<Reponse> call, Throwable t) { Log.e(TAG, "ereeeeeeur"+t.toString()); }
+      });
+
+  }
+
 
 
 }

@@ -1,25 +1,24 @@
 package com.example.trendingrepos.Repository;
 
-
-import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MediatorLiveData;
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Observer;
 
 
-import com.example.trendingrepos.Activity.MainActivity;
 import com.example.trendingrepos.Pojo.Repo;
 import com.example.trendingrepos.RestService.GitService;
 
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class RepoRepository {
 
     private static RepoRepository instance;
-    public static  int page =1;
-
     private GitService mGitService;
-   private MutableLiveData<List<Repo>> mRepos = new MutableLiveData<>();
-   private List<Repo> DisplayedData = new ArrayList<>() ;
+
+    private List<Repo> DisplayedData = new ArrayList<>() ;
+    private MediatorLiveData<List<Repo>> mLiveRepos = new MediatorLiveData<>();
 
 //Constructeur
     private RepoRepository(){
@@ -34,29 +33,29 @@ public class RepoRepository {
     }
 
 
-    public MutableLiveData<List<Repo>> getRepos(){ return mRepos; } //
+   public MutableLiveData<List<Repo>> getRepos(){ return mLiveRepos; }
 
-    //public List<Repo> getRepos(){ return Array ; }
+    public void init() {
+        mGitService = GitService.getInstance();
+        mGitService.Init();
+        mLiveRepos.addSource(mGitService.getRepos() ,new Observer<List<Repo>>() {
+            @Override
+            public void onChanged( List<Repo> repos) {
+                if (repos!= null){
+                    mLiveRepos.setValue(repos);
+                }
+                else  ProvideMockdata0() ;
 
-
-
-
-
-    public void FetchInitData(){
-        List<Repo> Data = new ArrayList<>( );
-
-        Data =mGitService.FetchData(1) ;
-
-        if (Data!= null){
-            DisplayedData.addAll(Data );// Ajouter
-            mRepos.setValue(DisplayedData);//Notifier le Repo de la nouvelle liste
-        }
-       else  ProvideMockdata0() ;
+            }
+        });
     }
 
 
+ public void FetchMoreData(  ){
+        mGitService.FetchMoreData();
 
-   // public void FetchMoreData(int page){  ProvideMockdata2() ;  }
+    }
+
     public void ProvideMockdata0(){
 
        ArrayList<Repo> listRepos = new ArrayList<>() ;
@@ -74,7 +73,7 @@ public class RepoRepository {
        listRepos.add(new Repo("smcsystem","Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.","s57445560","https://avatars3.githubusercontent.com/u/48942249?v=4","111","https://avatars3.githubusercontent.com/u/48942249?v=4"));
 
        DisplayedData.addAll(listRepos );
-       mRepos.setValue(DisplayedData);
+        mLiveRepos.setValue(DisplayedData);
    }
     public void ProvideMockdata1(){
 
@@ -92,7 +91,7 @@ public class RepoRepository {
        listRepos.add(new Repo("smcsystem","Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.","s57445560","https://avatars2.githubusercontent.com/u/21976395?v=4","111","https://avatars3.githubusercontent.com/u/48942249?v=4"));
 
        DisplayedData.addAll(listRepos );
-       mRepos.setValue(DisplayedData);
+        mLiveRepos.setValue(DisplayedData);
    }
     public void ProvideMockdata2(){
 
@@ -110,7 +109,7 @@ public class RepoRepository {
         listRepos.add(new Repo("smcsystem","Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.","s57445560","https://avatars3.githubusercontent.com/u/359870?v=4","111","https://avatars3.githubusercontent.com/u/48942249?v=4"));
 
         DisplayedData.addAll(listRepos );
-        mRepos.setValue(DisplayedData);
+        mLiveRepos.setValue(DisplayedData);
     }
     public void ProvideMockdata3(){
 
@@ -128,10 +127,8 @@ public class RepoRepository {
         listRepos.add(new Repo("smcsystem","Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.","s57445560","https://avatars3.githubusercontent.com/u/35402248?v=4","111","https://avatars3.githubusercontent.com/u/48942249?v=4"));
 
         DisplayedData.addAll(listRepos );
-        mRepos.setValue(DisplayedData);
-    }//avatar a changer
-
-
+        mLiveRepos.setValue(DisplayedData);
+    }
 
 
 
