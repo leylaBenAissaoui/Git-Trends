@@ -2,7 +2,8 @@
 :octocat: GitHub Api using Retrofit in Android
 
 # Description
-Implementation of a small app that list  the most :eyes: starred :octocat: Github repos that were created in the last 30 days by fetching  sorted JSON data directly from the Github API using Retrofit2 .
+Implementation of a small app that list  the most :star: starred :octocat: Github repos that were created in the last 30 days by fetching  sorted JSON data directly from the Github API using Retrofit2 .
+
 :link:
 :pushpin:
 :file_folder:
@@ -24,3 +25,32 @@ Implementation of a small app that list  the most :eyes: starred :octocat: Githu
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
   if you are interested by the result , have a look below :point_down: 
+  
+  ##
+  First of all , in this project I opted for the MVVM architecture
+  <img  align="center" src="https://github.com/leylaBenAissaoui/Mobile_Challenge/blob/master/Asset/Architecture.png" width="937" height="1038" >
+  
+## Features
+
+
+
+## librarys
+```
+  //glide
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+    //circle Image view
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+    
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    // lifecycle
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+   // animated svg
+    implementation  "com.jaredrummler:animated-svg-view:1.0.6"
+    // viewpager
+    implementation "androidx.viewpager:viewpager:1.0.0"
+
+```
