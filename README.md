@@ -4,12 +4,12 @@
 # Description
 Implementation of a small app that list  the most :star: starred :octocat: Github repos that were created in the last 30 days by fetching  sorted JSON data directly from the Github API using Retrofit2 .
 
-:link:
-:pushpin:
-:file_folder:
+ To do this:* <br />
 
-
-
+ 1. At the beginning, we have integrated recyclerView, to display the list of data
+ 2. After we added bottonvavigationView to navigate between the fragments.
+ 3. And we've even added a viewPager to make UserExperience more sophisticated.
+ 4. The last thing was to feed the list with real data received from the GitHub database using the Github API.
 
 
 
@@ -22,14 +22,12 @@ Implementation of a small app that list  the most :star: starred :octocat: Githu
 <img  align="left" src="https://github.com/leylaBenAissaoui/Mobile_Challenge/blob/master/Asset/viewPager.gif" width="156" height="256" title="viewPager" hspace="20">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
- ## If you are interested by the result , have a look below :point_down: 
+  **If you are interested by the result , have a look below** :point_down: 
  
  ## Prerequisites
 
- **To run this project you will need Android Studio 3.3.2 or higher**
-
-
-  
+**To run this project , just clone the repos and open it on Android Studio 3.3.2 or higher .**
+   
   ## ARchitecture
   First of all , in this project we have opted for the MVVM architecture
   
@@ -84,11 +82,6 @@ We have created packages by features. so the code  is more modular and easier to
  # ===> The view
  
  lets give live to this Mockups 
- from  this :point_right: 
+ :point_right: 
   <img  align="center"   hspace="20" src="https://raw.githubusercontent.com/hiddenfounders/mobile-coding-challenge/master/mockup.png" width="156" height="256"  >
 ======> <img   align="center"  hspace="20" src="https://github.com/leylaBenAissaoui/Mobile_Challenge/blob/master/Asset/RecyclerView.gif" width="156" height="256" >
-
-
-To do so  we have inegrated a recyclerView :
-
-
