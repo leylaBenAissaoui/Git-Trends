@@ -24,21 +24,31 @@ Implementation of a small app that list  the most :star: starred :octocat: Githu
 <img  align="left" src="https://github.com/leylaBenAissaoui/Mobile_Challenge/blob/master/Asset/viewPager.gif" width="156" height="256" title="viewPager" hspace="20">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-  if you are interested by the result , have a look below :point_down: 
+ ## If you are interested by the result , have a look below :point_down: 
   
   ##
-  First of all , in this project I opted for the MVVM architecture
+  First of all , in this project we opted for the MVVM architecture
+  
+  >  ## What is MVVM? 
+>  Model-View-ViewModel architecture consists of 3 parts.
+>  * ***The View*** gets user’s actions and sends to the ViewModel, or listens
+> live data stream from the ViewModel and provides to the users.
+> *  ***The  ViewModel*** gets user’s actions from the View or provides data to View.
+>  * ***The Model*** abstracts the data source. View and ViewModel uses that on
+> data stream.
+
   <p align="center">
   <img  align="center" src="https://github.com/leylaBenAissaoui/Mobile_Challenge/blob/master/Asset/Architecture.png" width="500" height="500" ></p>
+ 
   
   
 ## Features
 
 
 
-## librarys
+## libraries
 ```
-    // for Navigation
+    //For Navigation
     implementation 'com.google.android.material:material:1.0.0'
     
     //glide for loading images
@@ -59,3 +69,11 @@ Implementation of a small app that list  the most :star: starred :octocat: Githu
     implementation "androidx.viewpager:viewpager:1.0.0"
 
 ```
+
+
+
+## test 
+
+<script src="https://gist.github.com/leylaBenAissaoui/0485c55215752b7f85ee2c74bb654768.js"></script>
+
+
