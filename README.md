@@ -38,21 +38,24 @@ Implementation of a small app that list  the most :star: starred :octocat: Githu
 
 ## librarys
 ```
-  //glide
+    // for Navigation
+    implementation 'com.google.android.material:material:1.0.0'
+    
+    //glide for loading images
     implementation 'com.github.bumptech.glide:glide:4.8.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
-    //circle Image view
-    implementation 'de.hdodenhof:circleimageview:3.0.0'
     
-    //retrofit
+    //retrofit for API Calls
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
-    implementation 'com.google.android.material:material:1.0.0'
-    // lifecycle
+    
+    // lifecycle (ViewModel and LiveData) for observing data
     implementation "android.arch.lifecycle:extensions:1.1.1"
-   // animated svg
+    
+   // for animated svg
     implementation  "com.jaredrummler:animated-svg-view:1.0.6"
-    // viewpager
+    
+    // viewpager to ensure horizontal navigation 
     implementation "androidx.viewpager:viewpager:1.0.0"
 
 ```
