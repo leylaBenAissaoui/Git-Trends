@@ -77,5 +77,5 @@ We have created packages by features. so the code  is more modular and easier to
 ```
 
 
-
+You will find in this link all the [releases](https://github.com/leylaBenAissaoui/Mobile_Challenge/tags)
 
