@@ -7,4 +7,4 @@ GitHub Api using Retrofit in Android
 
 
 ## screen
-![](https://github.com/leylaBenAissaoui/Mobile_Challenge/blob/master/loading.gif)
+![](https://github.com/leylaBenAissaoui/Mobile_Challenge/blob/master/loading.gif =250x250)
