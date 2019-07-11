@@ -9,4 +9,4 @@ GitHub Api using Retrofit in Android
 ## screen
 ![](https://github.com/leylaBenAissaoui/Mobile_Challenge/blob/master/loading.gif )
 
-<img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" width="256" height="256" title="Github Logo">
+<img src="https://github.com/leylaBenAissaoui/Mobile_Challenge/blob/master/loading.gif" width="256" height="256" title="Github Logo">
