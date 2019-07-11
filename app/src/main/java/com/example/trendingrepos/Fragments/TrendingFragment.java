@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.trendingrepos.Adapter.MAdapter;
+import com.example.trendingrepos.Adapter.RecyclerAdapter;
 import com.example.trendingrepos.Adapter.MyOnScrollListener;
 import com.example.trendingrepos.Pojo.Repo;
 import com.example.trendingrepos.R;
@@ -29,7 +29,7 @@ public class TrendingFragment extends Fragment {
     View v ;
     private  AnimatedSvgView svgView ;
     private RecyclerView mRecyclerView;
-        private MAdapter adapter ;
+        private RecyclerAdapter adapter ;
     private LinearLayoutManager mLayoutManager ;
 
     private RepoViewModel mViewModel ;
@@ -51,7 +51,7 @@ public class TrendingFragment extends Fragment {
         if(Constants.firstLoad==true)mRecyclerView.setVisibility(View.GONE);
 
         mRecyclerView.addItemDecoration(itemDecor);
-        adapter = new MAdapter(getContext() );
+        adapter = new RecyclerAdapter(getContext() );
         mRecyclerView.setAdapter(adapter);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager =new LinearLayoutManager(getActivity()) ;

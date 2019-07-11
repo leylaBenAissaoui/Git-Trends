@@ -21,14 +21,14 @@ import com.example.trendingrepos.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MAdapter extends RecyclerView.Adapter<MAdapter.ViewHolder>  {
+public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder>  {
 
     private static final String TAG = "MyAdapter";
     private Context mcontext ;
     private List<Repo> Repos = new ArrayList<>();
 
 
-    public MAdapter(Context mcontext ) {
+    public RecyclerAdapter(Context mcontext ) {
         this.mcontext = mcontext;
 
     }
