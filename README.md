@@ -1,5 +1,5 @@
 # Mobile_Challenge
-:octocat: GitHub Api using Retrofit in Android :octocat:
+:octocat: consuming GitHub Api using Retrofit in Android :octocat:
 
 # Description
 Implementation of a small app that list  the most :star: starred :octocat: Github repos that were created in the last 30 days by fetching  sorted JSON data directly from the Github API using Retrofit2 .
