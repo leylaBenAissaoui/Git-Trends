@@ -28,7 +28,9 @@ Implementation of a small app that list  the most :star: starred :octocat: Githu
   
   ##
   First of all , in this project I opted for the MVVM architecture
-  <img  align="center" src="https://github.com/leylaBenAissaoui/Mobile_Challenge/blob/master/Asset/Architecture.png" width="937" height="1038" >
+  <div style="text-align:center">
+  <img  align="center" src="https://github.com/leylaBenAissaoui/Mobile_Challenge/blob/master/Asset/Architecture.png" width="500" height="500" ></div>
+  
   
 ## Features
 
