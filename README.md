@@ -52,7 +52,7 @@ We have created packages by features. so the code  is more modular and easier to
 
 
 
-## libraries
+## Libraries
 ```
     //For Navigation
     implementation 'com.google.android.material:material:1.0.0'
