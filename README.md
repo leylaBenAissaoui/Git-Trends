@@ -12,8 +12,6 @@ Implementation of a small app that list  the most :star: starred :octocat: Githu
 
 
 
-## Prerequisites
-:blush: :wink:
 
 ## Screenshots
 
@@ -25,9 +23,15 @@ Implementation of a small app that list  the most :star: starred :octocat: Githu
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
  ## If you are interested by the result , have a look below :point_down: 
+ 
+ ## Prerequisites
+
+ **To run this project you will need Android Studio 3.3.2 or higher**
+
+
   
-  ##
-  First of all , in this project we opted for the MVVM architecture
+  ## ARchitecture
+  First of all , in this project we have opted for the MVVM architecture
   
   >  ## What is MVVM? 
 >  Model-View-ViewModel architecture consists of 3 parts.
@@ -42,7 +46,12 @@ Implementation of a small app that list  the most :star: starred :octocat: Githu
  
   
   
-## Features
+## Project Structure
+We have created packages by features. so the code  is more modular and easier to manage.
+
+<p align="center">
+  <img  align="center" src="https://github.com/leylaBenAissaoui/Mobile_Challenge/blob/master/Asset/projett.PNG" width="300" height="500"> </p>
+
 
 
 
@@ -72,8 +81,14 @@ Implementation of a small app that list  the most :star: starred :octocat: Githu
 
 
 
-## test 
+ # ===> The view
+ 
+ lets give live to this Mockups 
+ from  this :point_right: 
+  <img  align="center"   hspace="20" src="https://raw.githubusercontent.com/hiddenfounders/mobile-coding-challenge/master/mockup.png" width="156" height="256"  >
+======> <img   align="center"  hspace="20" src="https://github.com/leylaBenAissaoui/Mobile_Challenge/blob/master/Asset/RecyclerView.gif" width="156" height="256" >
 
-<script src="https://gist.github.com/leylaBenAissaoui/0485c55215752b7f85ee2c74bb654768.js"></script>
+
+To do so  we have inegrated a recyclerView :
 
 
