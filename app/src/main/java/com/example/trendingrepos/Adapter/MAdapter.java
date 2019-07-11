@@ -18,12 +18,14 @@ import com.bumptech.glide.Glide;
 import com.example.trendingrepos.Pojo.Repo;
 import com.example.trendingrepos.R;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class MAdapter extends RecyclerView.Adapter<MAdapter.ViewHolder>  {
 
     private static final String TAG = "MyAdapter";
+
     private Context mcontext ;
     private List<Repo> Repos = new ArrayList<>();
 

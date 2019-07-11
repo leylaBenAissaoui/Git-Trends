@@ -1,5 +1,6 @@
 package com.example.trendingrepos.Repository;
 
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MediatorLiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
@@ -33,16 +34,17 @@ public class RepoRepository {
     }
 
 
-   public MutableLiveData<List<Repo>> getRepos(){ return mLiveRepos; }
+   public LiveData<List<Repo>> getRepos(){ return mLiveRepos; }
 
     public void init() {
         mGitService = GitService.getInstance();
         mGitService.Init();
+        mLiveRepos.removeSource(mGitService.getRepos() );
         mLiveRepos.addSource(mGitService.getRepos() ,new Observer<List<Repo>>() {
             @Override
             public void onChanged( List<Repo> repos) {
                 if (repos!= null){
-                    mLiveRepos.setValue(repos);
+                    mLiveRepos.postValue(repos);
                 }
                 else  ProvideMockdata0() ;
 

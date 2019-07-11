@@ -1,10 +1,15 @@
 <resources>
-    <string name="app_name">Git Trends</string>
+    <string name="app_name">GitTrends</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_trendings">Trendings</string>
+    <string name="title_settings">Settings</string>
+
     <string name="owner_name">owner_name</string>
     <string name="repo_name">repo_name</string>
     <string name="repo_desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</string>
     <string name="num_star">5.1K</string>
     <string name="settings">Settings</string>
     <string name="trendings">Trendings</string>
-
 </resources>

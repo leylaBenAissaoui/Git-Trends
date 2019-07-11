@@ -1,17 +1,15 @@
 package com.example.trendingrepos.Adapter;
 
-import android.util.Log;
-import android.widget.Toast;
-
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.trendingrepos.Activity.MainActivity;
+import com.example.trendingrepos.Util.Constants;
+
 
 public abstract class MyOnScrollListener extends RecyclerView.OnScrollListener {
-    private int previousTotal = 0; // The total number of items in the dataset after the last load
-    private boolean loading = true; // True if we are still waiting for the last set of data to load.
-    private int visibleThreshold = 0; // The minimum amount of items to have below your current scroll position before loading more.
+    private int previousTotal = 0;
+    private boolean loading = true;
+    private int visibleThreshold = 0;
     int firstVisibleItem, visibleItemCount, totalItemCount ;
 
     private static final int PAGE_SIZE = 30;
@@ -35,7 +33,7 @@ public abstract class MyOnScrollListener extends RecyclerView.OnScrollListener {
             if ((visibleItemCount + firstVisibleItem) >= totalItemCount
                     && firstVisibleItem >= 0
             //&&totalItemCount >= PAGE_SIZE) {
-                   &&totalItemCount >= PAGE_SIZE*MainActivity.page) {
+                   &&totalItemCount >= PAGE_SIZE* Constants.page) {
                 LoadMore();
             }
         }

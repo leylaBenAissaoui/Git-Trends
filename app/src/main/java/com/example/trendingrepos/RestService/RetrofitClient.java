@@ -22,7 +22,7 @@ public class RetrofitClient {
             Gson gson = new GsonBuilder()
                     .setLenient()
                     .create();
-            retrofit = new retrofit2.Retrofit.Builder()
+            retrofit = new Retrofit.Builder()
                     .baseUrl(BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create(gson))
                     //.addConverterFactory(RepoConverterFactory.create())
