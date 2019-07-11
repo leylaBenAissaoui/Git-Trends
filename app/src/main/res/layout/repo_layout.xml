@@ -73,7 +73,7 @@
         android:layout_marginStart="320dp"
         android:layout_marginLeft="320dp"
         android:layout_marginTop="111dp"
-        app:srcCompat="@drawable/star" />
+        app:srcCompat="@drawable/ic_star_black" />
 
     <TextView
         android:id="@+id/num_star"

@@ -4,7 +4,6 @@ import android.app.Application;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
-
 import androidx.lifecycle.MediatorLiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
@@ -15,7 +14,7 @@ import com.example.trendingrepos.Repository.RepoRepository;
 
 import java.util.List;
 
-public class RepoViewModel  extends AndroidViewModel {
+public class RepoViewModel extends AndroidViewModel {
 
 
  private RepoRepository mRepoRepository;
@@ -30,31 +29,19 @@ public class RepoViewModel  extends AndroidViewModel {
  public void init() {
      mRepoRepository = RepoRepository.getInstance();
      mRepoRepository.init();
+     mLiveRepos.removeSource(mRepoRepository.getRepos());
      mLiveRepos.addSource(mRepoRepository.getRepos() ,new Observer<List<Repo>>() {
          @Override
          public void onChanged( List<Repo> repos) {
-             mLiveRepos.setValue(repos);
+             mLiveRepos.postValue(repos);
          }
      });
+
  }
 
     public MutableLiveData<List<Repo>> getmLiveRepos() { return mLiveRepos; }
 
     public void  FetchMoreData(){  mRepoRepository.FetchMoreData();}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     public void  FetchMockData( int page){
          switch (page%4){
