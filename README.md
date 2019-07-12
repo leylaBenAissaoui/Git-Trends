@@ -7,7 +7,7 @@ Implementation of a small app that list  the most :star: starred :octocat: Githu
  To do this:* <br />
 
  1. At the beginning, we have integrated recyclerView, to display the list of data
- 2. After we added bottonvavigationView to navigate between the fragments.
+ 2. After we added bottomNavigationView to navigate between the fragments.
  3. And we've even added a viewPager to make UserExperience more sophisticated.
  4. The last thing was to feed the list with real data received from the GitHub database using the Github API ***With the ability to keep scrolling and new results appear***
 
