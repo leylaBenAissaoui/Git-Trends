@@ -1,4 +1,4 @@
-# Mobile_Challenge
+# GitTrends
 :octocat: consuming GitHub Api using Retrofit in Android Application :octocat:
 
 # Description
