@@ -4,7 +4,7 @@
 # Description
 Implementation of a small app that list  the most :star: starred :octocat: Github repos that were created in the last 30 days by fetching  sorted JSON data directly from the Github API using Retrofit2 .
 
- To do this:* <br />
+ To do this: <br />
 
  1. At the beginning, we have integrated recyclerView, to display the list of data
  2. After we added bottomNavigationView to navigate between the fragments.
